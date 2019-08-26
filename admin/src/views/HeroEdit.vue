@@ -10,7 +10,7 @@
           <el-form-item label="头像">
             <el-upload
               class="avatar-uploader"
-              action="getUploadUrl"
+              :action="uploadUrl"
               :headers="getAuthorization()"
               :show-file-list="false"
               :on-success="handleAvatarSuccess"
@@ -82,7 +82,7 @@
               <el-form-item label="技能头像">
                 <el-upload
                   class="avatar-uploader"
-                  action="getUploadUrl"
+                  :action="uploadUrl"
                   :headers="getAuthorization()"
                   :show-file-list="false"
                   :on-success="res => item.icon = res.url"

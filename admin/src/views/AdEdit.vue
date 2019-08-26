@@ -16,7 +16,7 @@
             <el-form-item label="图片">
               <el-upload
                 class="avatar-uploader"
-                action="getUploadUrl"
+                :action="uploadUrl"
                 :headers="getAuthorization()"
                 :show-file-list="false"
                 :on-success="res => item.image = res.url"
