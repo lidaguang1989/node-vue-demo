@@ -1,0 +1,72 @@
+// reset
+$baseFontSize: 1rem;
+$baseSpaceSize: 1rem;
+
+// colors
+$colors: (
+    "primary": #db9e3f,
+    "info": #4b67af,
+    "white": #fff,
+    "grey": #999,
+    "grey-1": #777,
+    "grey-2": #666,
+    "grey-3": #d4d9de,
+    "dark": #343440,
+    "dark-1": #333,
+    "dark-2": #0d0f0f,
+    "dark-3": #464f73,
+    "black": #000,
+);
+$borderColor: map-get($colors, 'grey-3');
+
+// font-size
+$fonts: (
+    xxs: 0.6154,
+    xs: 0.7692,
+    sm: 0.923,
+    ml: 1,
+    lg: 1.0769,
+    xl: 1.1538,
+    xxl: 1.2308,
+);
+
+
+$flex-jc: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+);
+
+
+$flex-ai: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    stretch: stretch,
+);
+
+
+// spaces
+$space-types: (
+    m: margin,
+    p: padding,
+);
+
+$space-directions: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+);
+
+$space-sizes: (
+    0: 0,
+    1: 0.25,
+    2: 0.5,
+    3: 1,
+    4: 1.5,
+    5: 3,
+);
+

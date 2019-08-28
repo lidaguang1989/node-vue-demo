@@ -3,7 +3,7 @@ const mogoose = require('mongoose')
 
 const schema = mogoose.Schema({
     name: {type: String},
-    icon: {tyep: String},
+    icon: {type: String},
     title: {type: String},
     categories: [{type: mogoose.SchemaTypes.ObjectId, ref: 'Category'}],
     scores: {
@@ -33,4 +33,4 @@ const schema = mogoose.Schema({
     ]
 })
 
-module.exports = mogoose.model('HeroModel', schema)
+module.exports = mogoose.model('Hero', schema, 'heroes')
