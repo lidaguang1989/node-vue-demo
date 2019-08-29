@@ -9,7 +9,8 @@
       <el-form-item label="图标">
         <el-upload
           class="avatar-uploader"
-          action="http://localhost:3000/admin/api/upload"
+          :action="uploadUrl"
+          :headers="getAuthorization()"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload"

@@ -4,6 +4,7 @@ import App from './App.vue'
 import './assets/iconfont/iconfont.css'
 import './assets/scss/style.scss'
 import router from './router'
+import './common/filters'
 
 Vue.config.productionTip = false
 
@@ -13,8 +14,11 @@ Vue.prototype.$http = axios.create({
 })
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+
 // require styles
 import 'swiper/dist/css/swiper.css'
+
+import './plugins/element.js'
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 new Vue({

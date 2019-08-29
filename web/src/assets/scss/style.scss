@@ -26,6 +26,13 @@ p{
     line-height: 1.5rem;
 }
 
+// border
+@each $var in (top, right, bottom, left) {
+    .border-#{$var} {
+        border-#{$var}: 1px solid $borderColor;
+    }
+}
+
 // text align
 @each $var in (left, center, right) {
     .text-#{$var}{
@@ -69,7 +76,7 @@ p{
     flex: 1;
 }
 
-.flex-colomn{
+.flex-column{
     flex-direction: column;
 }
 
@@ -178,3 +185,4 @@ p{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+

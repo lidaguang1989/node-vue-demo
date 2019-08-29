@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-black d-flex ai-center py-2 px-3">
+    <div class="bg-black d-flex ai-center py-2 px-3 topbar">
       <i class="sprite sprite-logo"></i>
       <div class="flex-1 mx-2">
         <div class="text-white">王者荣耀</div>
@@ -23,3 +23,11 @@
     <router-view></router-view>
   </div>
 </template>
+
+<style scoped>
+  .topbar{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+</style>

@@ -5,6 +5,7 @@ const schema = mogoose.Schema({
     name: {type: String},
     icon: {type: String},
     title: {type: String},
+    banner: {type: String},
     categories: [{type: mogoose.SchemaTypes.ObjectId, ref: 'Category'}],
     scores: {
         difficult: {type: Number},
@@ -16,6 +17,8 @@ const schema = mogoose.Schema({
         {
             icon: {type: String},
             title: {type: String},
+            delay: {type: String},
+            cost: {type: String},
             description: {type: String},
             tips: {type: String},
         }

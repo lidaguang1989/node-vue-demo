@@ -26,48 +26,50 @@
       </div>
     </div>
     <!-- nav icons end -->
-    <m-list-card title="新闻资讯" icon="card-hero" :datas="newsData">
-      <template #items={data}>
-        <div class="py-2 fs-lg d-flex ai-center" v-for="(list, i) in data.newsList" :key="i">
+    <m-list-card title="新闻资讯" iconleft="cc-menu-circle" iconright="menu" :datas="newsData">
+      <template #items="{data}">
+        <router-link
+          tag="div"
+          :to="`/articles/${list._id}`"
+          class="py-2 fs-lg d-flex ai-center"
+          v-for="(list, i) in data.newsList"
+          :key="i"
+        >
           <span class="text-dark-3">[{{list.categoryName}}]</span>
           <span class="mx-1">|</span>
           <span class="flex-1 text-ellipsis pr-2">{{list.title}}</span>
-          <span class="text-grey-1 fs-sm">{{list.createdAt | date}}</span>
+          <span class="text-grey-1 fs-sm">{{list.createdAt | dateFormat('MM/DD')}}</span>
+        </router-link>
+      </template>
+    </m-list-card>
+    <m-list-card title="英雄列表" iconleft="card-hero" iconright="menu" :datas="heroesData">
+      <template #items="{data}">
+        <div class="d-flex flex-wrap" style="margin: 0 -0.5rem;">
+          <router-link
+            :to="`/heroes/${hero._id}`"
+            tag="div"
+            style="width: 20%;"
+            class="text-center p-2"
+            v-for="(hero, i) in data.heroesList"
+            :key="i"
+          >
+            <img :src="hero.icon" style="width: 100%;" />
+            <div>{{hero.name}}</div>
+          </router-link>
         </div>
       </template>
     </m-list-card>
-
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
-    <p>dsfsd</p>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import MListCard from "../components/ListCard";
-import dayjs from 'dayjs'
 export default {
-  filters: {
-    date(val) {
-      return dayjs(val).format('MM/DD')
-    }
-  },
   data() {
     return {
       newsData: [],
+      heroesData: [],
       swiperOption: {
         pagination: {
           el: ".pagination-home"
@@ -76,16 +78,21 @@ export default {
     };
   },
   components: {
-    MListCard,
+    MListCard
   },
   methods: {
     async fetchNews() {
-      const res = await this.$http.get('news/list');
+      const res = await this.$http.get("news/list");
       this.newsData = res.data;
+    },
+    async fetchHeroes() {
+      const res = await this.$http.get("heroes/list");
+      this.heroesData = res.data;
     }
   },
   created() {
-    this.fetchNews()
+    this.fetchHeroes();
+    this.fetchNews();
   }
 };
 </script>
