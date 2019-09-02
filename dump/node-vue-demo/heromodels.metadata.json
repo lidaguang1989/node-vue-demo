@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"node-vue-demo.heromodels"}],"uuid":"98db22a5f8af4adcbcded955168d0247"}
